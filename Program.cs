@@ -45,11 +45,19 @@
 
             //Checking Existing Box
             Console.WriteLine("-------------Checking Box 5x5x5 --------------");
-            var boxDim5 = boxes.Where(box => box.Height == 5 && box.Length == 5 && box.Width == 5);
-            foreach (var box in boxDim5)
+            var boxDim5 = boxes.Where(box => box.Height == 5 && box.Length == 6 && box.Width == 5);
+            if (boxDim5.Any())
             {
-                Console.WriteLine($"Box with dimensions {box.Height}x{box.Length}x{box.Width} found.");
+                foreach (var box in boxDim5)
+                {
+                    Console.WriteLine($"Box with dimensions {box.Height}x{box.Length}x{box.Width} found.");
+                }
             }
+            else
+            {
+                Console.WriteLine("No boxes with dimensions 5x5x5 found.");
+            }
+
 
 
             Console.ReadKey();
